@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class BoardSize {
+
+}
+class Color {
+
+}
+class ColorMenu {
+colors
+get_color()
+}
+class GUI {
+root
+trn_obj
+trn
+color
+colors
+color_py_name
+col1
+col2
+col3
+col4
+guess_button
+input_word
+guess()
+}
+
+class TurnNum {
+user_input
+get_val()
+}
+
+class Word {
+word_list
+output_list
+obj
+word_length
+get_word()
+}
+
+class WordleBoard {
+word
+root
+user_input
+col1
+col2
+col3
+col4
+turn_num
+board_len
+get_board()
+}
+class WordLength {
+
+}
+
+TurnNum -|> Color
+TurnNum -|> BoardSize
+TurnNum -|> WordLength
+GUI -> ColorMenu
+GUI -> TurnNum
+GUI -> WordleBoard
+GUI -> Word
+GUI -> BoardSize
+ColorMenu -> Color
+Word -> WordLength
+@enduml
